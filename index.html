@@ -9,15 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- LOADER SIMPLIFICADO -->
-
-    <!-- LOADER MEJORADO -->
-<div id="loader">
-    <div class="loader-content">
-        <div class="spinner"></div>
-        <p>Cargando...</p>
+    <!-- SOLO UN LOADER -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Cargando...</p>
+        </div>
     </div>
-</div>
     
     <button id="mode-toggle">☾</button>
 
@@ -169,57 +167,15 @@
 
     <script src="js/script.js"></script>
     
-    <!-- SCRIPT DE EMERGENCIA PARA EL LOADER -->
+    <!-- SOLO UN SCRIPT DE EMERGENCIA -->
     <script>
-        // Fuerza la eliminación del loader después de 3 segundos
+        // Script de emergencia simplificado
         setTimeout(function() {
             const loader = document.getElementById('loader');
             if (loader) {
-                loader.style.opacity = '0';
-                loader.style.transition = 'opacity 0.5s ease';
-                setTimeout(function() {
-                    loader.style.display = 'none';
-                }, 500);
-            }
-        }, 3000);
-        
-        // También elimina el loader cuando la página carga
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const loader = document.getElementById('loader');
-                if (loader) {
-                    loader.style.opacity = '0';
-                    loader.style.transition = 'opacity 0.5s ease';
-                    setTimeout(function() {
-                        loader.style.display = 'none';
-                    }, 500);
-                }
-            }, 1000);
-        });
-        
-        // Animación del spinner
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-
-
-    // Garantizar que el loader desaparezca
-    setTimeout(function() {
-        const loader = document.getElementById('loader');
-        if (loader && !loader.classList.contains('hidden')) {
-            console.log('Emergencia: eliminando loader');
-            loader.classList.add('hidden');
-            setTimeout(function() {
                 loader.style.display = 'none';
-            }, 500);
-        }
-    }, 5000);
-</script>
-    
+            }
+        }, 4000);
+    </script>
 </body>
 </html>
