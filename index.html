@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="loader"></div>
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Cargando...</p>
+        </div>
+    </div>
+    
     <button id="mode-toggle">☾</button>
 
     <nav>
@@ -19,8 +25,9 @@
         <a href="#cursos-talleres">Cursos y Talleres</a>
         <a href="#testimonios">Reseñas y Testimonios</a>
     </nav>
+    
     <header>
-        <img src="https://i.imgur.com/6ltfYt6.jpeg" alt="Logo">
+        <img src="https://i.imgur.com/6ltfYt6.jpeg" alt="Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNzU3MGM5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='">
         <h1>Soluciones Logísticas con AppSheet</h1>
         <p>Digitaliza tu inventario, pedidos y procesos logísticos con apps personalizadas</p>
     </header>
@@ -39,25 +46,25 @@
     <section id="soluciones">
         <h2>Galería de Soluciones</h2>
         <div class="carousel" id="image-carousel">
-            <img src="https://i.imgur.com/HBlC2TF.jpeg" onclick="openImageModal(0)">
-            <img src="https://i.imgur.com/LjIIjE6.jpeg" onclick="openImageModal(1)">
-            <img src="https://i.imgur.com/AM6llSu.jpeg" onclick="openImageModal(2)">
-            <img src="https://i.imgur.com/d5cA0wu.jpeg" onclick="openImageModal(3)">
-            <img src="https://i.imgur.com/k0lLKjm.jpeg" onclick="openImageModal(4)">
-            <img src="https://i.imgur.com/h5m43Mr.jpeg" onclick="openImageModal(5)">
-            <img src="https://i.imgur.com/huXCgKI.jpeg" onclick="openImageModal(6)">
-            <img src="https://i.imgur.com/pDTJXPK.jpeg" onclick="openImageModal(7)">
-            <img src="https://i.imgur.com/coWmbDZ.jpeg" onclick="openImageModal(8)">
-            <img src="https://i.imgur.com/jrnayKu.jpeg" onclick="openImageModal(9)">
-            <img src="https://i.imgur.com/Fp6EJAn.jpeg" onclick="openImageModal(10)">
-            <img src="https://i.imgur.com/3BhreAZ.jpeg" onclick="openImageModal(11)">
-            <img src="https://i.imgur.com/lyyB3LT.jpeg" onclick="openImageModal(12)">
-            <img src="https://i.imgur.com/r4Z1L7C.jpeg" onclick="openImageModal(13)">
+            <img src="https://i.imgur.com/HBlC2TF.jpeg" alt="Solución 1" onclick="openImageModal(0)">
+            <img src="https://i.imgur.com/LjIIjE6.jpeg" alt="Solución 2" onclick="openImageModal(1)">
+            <img src="https://i.imgur.com/AM6llSu.jpeg" alt="Solución 3" onclick="openImageModal(2)">
+            <img src="https://i.imgur.com/d5cA0wu.jpeg" alt="Solución 4" onclick="openImageModal(3)">
+            <img src="https://i.imgur.com/k0lLKjm.jpeg" alt="Solución 5" onclick="openImageModal(4)">
+            <img src="https://i.imgur.com/h5m43Mr.jpeg" alt="Solución 6" onclick="openImageModal(5)">
+            <img src="https://i.imgur.com/huXCgKI.jpeg" alt="Solución 7" onclick="openImageModal(6)">
+            <img src="https://i.imgur.com/pDTJXPK.jpeg" alt="Solución 8" onclick="openImageModal(7)">
+            <img src="https://i.imgur.com/coWmbDZ.jpeg" alt="Solución 9" onclick="openImageModal(8)">
+            <img src="https://i.imgur.com/jrnayKu.jpeg" alt="Solución 10" onclick="openImageModal(9)">
+            <img src="https://i.imgur.com/Fp6EJAn.jpeg" alt="Solución 11" onclick="openImageModal(10)">
+            <img src="https://i.imgur.com/3BhreAZ.jpeg" alt="Solución 12" onclick="openImageModal(11)">
+            <img src="https://i.imgur.com/lyyB3LT.jpeg" alt="Solución 13" onclick="openImageModal(12)">
+            <img src="https://i.imgur.com/r4Z1L7C.jpeg" alt="Solución 14" onclick="openImageModal(13)">
         </div>
         <div id="image-modal" class="modal">
             <span class="close" onclick="closeImageModal()">×</span>
             <span class="prev" onclick="changeImage(-1)">❮</span>
-            <img id="modal-image" src="" onclick="toggleZoom(this)">
+            <img id="modal-image" src="" alt="Imagen ampliada" onclick="toggleZoom(this)">
             <span class="next" onclick="changeImage(1)">❯</span>
         </div>
     </section>
@@ -70,7 +77,7 @@
                 <iframe src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div>
-                <h3>Dashboard interactivos y practicos</h3>
+                <h3>Dashboard interactivos y prácticos</h3>
                 <iframe src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
@@ -97,7 +104,7 @@
             <div class="contenido-modal">
                 <button class="cerrar-modal" onclick="cerrarModal('modal-talleres')">×</button>
                 <div id="contenido-talleres">
-                    <p>¡Grandes talleres gratuitos estan en camino! pronto te estaremos informando. 😉</p>
+                    <p>¡Grandes talleres gratuitos están en camino! Pronto te estaremos informando. 😉</p>
                 </div>
             </div>
         </div>  
@@ -106,14 +113,14 @@
     <section id="testimonios" class="testimonios-container">
         <div class="testimonios-header">
             <h2>Testimonios de Clientes</h2>
-            <p style="color: #COCOCO;">Observa lo que opinan los usuarios sobre nuestras soluciones</p>
+            <p>Observa lo que opinan los usuarios sobre nuestras soluciones</p>
         </div>
 
         <button id="mostrarFormulario" class="btn-calificar">Calificar</button>
 
         <form id="reviewForm" class="review-form oculto">
             <input type="text" name="nombre" placeholder="Tu nombre" required />
-            <input type="text" name="correo" placeholder="Correo" required />
+            <input type="email" name="correo" placeholder="Correo" required />
             <textarea name="mensaje" placeholder="Tu testimonio" required></textarea>
 
             <label for="calificacion">Calificación:</label>
@@ -130,7 +137,9 @@
             <div class="form-feedback" id="formFeedback"></div>
         </form>
 
-        <div id="contenedor-testimonios" class="galeria-testimonios vertical-carousel"></div>
+        <div id="contenedor-testimonios" class="galeria-testimonios vertical-carousel">
+            <p>Cargando testimonios...</p>
+        </div>
     </section>
 
     <section id="contacto">
