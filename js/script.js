@@ -250,7 +250,7 @@ function initTestimonials() {
                     contenedor.appendChild(tarjeta);
                 });
             } else {
-                contenedor.innerHTML = '<p>Aún no hay testimonios. ¡Sé el primero en dejar uno!</p>';
+                contenedor.innerHTML = '<p>Aún no hay testimonios.</p>';
             }
         } catch (err) {
             console.error('Error cargando testimonios:', err);
