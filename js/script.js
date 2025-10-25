@@ -27,8 +27,8 @@ function initViewSystem() {
         // Scroll al inicio de la página
         window.scrollTo(0, 0);
         
-        // Actualizar URL
-        history.pushState(null, null, `#${viewId}`);
+        // Actualizar URL PERO NO PERMITIR QUE AFECTE AL RECARGAR
+        history.replaceState(null, null, `#${viewId}`);
     }
     
     // Event listeners para los enlaces de navegación
@@ -48,9 +48,11 @@ function initViewSystem() {
         }
     });
     
-    // Mostrar vista inicial basada en el hash de la URL
-    const initialView = window.location.hash.replace('#', '') || 'inicio';
-    showView(initialView);
+    // MOSTRAR SIEMPRE INICIO AL RECARGAR - IGNORAR HASH
+    showView('inicio');
+    
+    // Limpiar hash de la URL
+    history.replaceState(null, null, ' ');
 }
 
 // ========== LOADER ==========
