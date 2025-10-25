@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="loader">
-        <div class="loader-content">
-            <div class="spinner"></div>
-            <p>Cargando...</p>
+    <!-- LOADER SIMPLIFICADO -->
+    <div id="loader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:white;z-index:9999;display:flex;justify-content:center;align-items:center;">
+        <div style="text-align:center;">
+            <div style="width:50px;height:50px;border:5px solid #f3f3f3;border-top:5px solid #5e56c6;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px;"></div>
+            <p style="color:#5e56c6;font-weight:600;">Cargando...</p>
         </div>
     </div>
     
@@ -27,7 +28,7 @@
     </nav>
     
     <header>
-        <img src="https://i.imgur.com/6ltfYt6.jpeg" alt="Logo" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNzU3MGM5Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='">
+        <img src="https://i.imgur.com/6ltfYt6.jpeg" alt="Logo" onerror="this.style.display='none'">
         <h1>Soluciones Logísticas con AppSheet</h1>
         <p>Digitaliza tu inventario, pedidos y procesos logísticos con apps personalizadas</p>
     </header>
@@ -165,5 +166,44 @@
     </footer>
 
     <script src="js/script.js"></script>
+    
+    <!-- SCRIPT DE EMERGENCIA PARA EL LOADER -->
+    <script>
+        // Fuerza la eliminación del loader después de 3 segundos
+        setTimeout(function() {
+            const loader = document.getElementById('loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                loader.style.transition = 'opacity 0.5s ease';
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 500);
+            }
+        }, 3000);
+        
+        // También elimina el loader cuando la página carga
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loader = document.getElementById('loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.transition = 'opacity 0.5s ease';
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                    }, 500);
+                }
+            }, 1000);
+        });
+        
+        // Animación del spinner
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
