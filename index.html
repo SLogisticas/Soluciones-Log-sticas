@@ -85,31 +85,34 @@
     </section>
 
     <section id="cursos-talleres" class="contenedor-seccion">
-        <h2 class="titulo-seccion"><span></span> Cursos y Talleres</h2>
+    <h2 class="titulo-seccion">Cursos y Talleres</h2>
 
-        <div class="botones-cursos">
-            <button class="btn-cursos-talleres" onclick="abrirModal('modal-cursos')">Cursos Gratis</button>
-            <button class="btn-cursos-talleres" onclick="abrirModal('modal-talleres')">Talleres Gratis</button>
-        </div>
+    <div class="botones-cursos">
+        <button class="btn-cursos-talleres" onclick="abrirModal('modal-cursos')">Cursos Gratis</button>
+        <button class="btn-cursos-talleres" onclick="abrirModal('modal-talleres')">Talleres Gratis</button>
+    </div>
 
-        <div id="modal-cursos" class="modal-curso oculto">
-            <div class="contenido-modal">
-                <button class="cerrar-modal" onclick="cerrarModal('modal-cursos')">×</button>
-                <div id="contenido-cursos">
-                    <p>¡Estamos preparando un increíble curso gratuito para ti! Mantente atento a nuestras novedades. 😉</p>
-                </div>
+    <!-- Modal Cursos -->
+    <div id="modal-cursos" class="modal-curso oculto">
+        <div class="contenido-modal">
+            <button class="cerrar-modal" onclick="cerrarModal('modal-cursos')">×</button>
+            <div id="contenido-cursos">
+                <p>¡Estamos preparando un increíble curso gratuito para ti! Mantente atento a nuestras novedades. 😉</p>
             </div>
         </div>
+    </div>
 
-        <div id="modal-talleres" class="modal-taller oculto">
-            <div class="contenido-modal">
-                <button class="cerrar-modal" onclick="cerrarModal('modal-talleres')">×</button>
-                <div id="contenido-talleres">
-                    <p>¡Grandes talleres gratuitos están en camino! Pronto te estaremos informando. 😉</p>
-                </div>
+    <!-- Modal Talleres -->
+    <div id="modal-talleres" class="modal-curso oculto">
+        <div class="contenido-modal">
+            <button class="cerrar-modal" onclick="cerrarModal('modal-talleres')">×</button>
+            <div id="contenido-talleres">
+                <p>¡Grandes talleres gratuitos están en camino! Pronto te estaremos informando. 😉</p>
             </div>
-        </div>  
-    </section>
+        </div>
+    </div>
+</section>
+    
 
     <section id="testimonios" class="testimonios-container">
         <div class="testimonios-header">
