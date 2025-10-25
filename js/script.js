@@ -1,6 +1,60 @@
+// ========== SISTEMA DE VISTAS ==========
+function initViewSystem() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const views = document.querySelectorAll('.view');
+    
+    // Función para cambiar de vista
+    function showView(viewId) {
+        // Ocultar todas las vistas
+        views.forEach(view => {
+            view.classList.remove('active');
+        });
+        
+        // Mostrar la vista seleccionada
+        const targetView = document.getElementById(viewId);
+        if (targetView) {
+            targetView.classList.add('active');
+        }
+        
+        // Actualizar enlaces activos
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === viewId) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Scroll al inicio de la página
+        window.scrollTo(0, 0);
+        
+        // Actualizar URL
+        history.pushState(null, null, `#${viewId}`);
+    }
+    
+    // Event listeners para los enlaces de navegación
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetView = this.getAttribute('data-section');
+            showView(targetView);
+        });
+    });
+    
+    // Manejar navegación con botones de retroceso/avance
+    window.addEventListener('popstate', function() {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+            showView(hash);
+        }
+    });
+    
+    // Mostrar vista inicial basada en el hash de la URL
+    const initialView = window.location.hash.replace('#', '') || 'inicio';
+    showView(initialView);
+}
+
 // ========== LOADER ==========
 function initLoader() {
-    // Ocultar loader inmediatamente como fallback
     setTimeout(() => {
         const loader = document.getElementById('loader');
         if (loader) {
@@ -8,7 +62,6 @@ function initLoader() {
         }
     }, 2000);
 
-    // Ocultar cuando la página cargue
     window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
         if (loader) {
@@ -23,41 +76,19 @@ function initLoader() {
 function initDarkMode() {
     const modeToggle = document.getElementById('mode-toggle');
     
-    if (!modeToggle) {
-        console.error('No se encontró el botón de modo oscuro');
-        return;
-    }
+    if (!modeToggle) return;
 
-    // Cargar preferencia guardada
     const savedDarkMode = localStorage.getItem('darkMode');
     if (savedDarkMode === 'true') {
         document.body.classList.add('dark-mode');
         modeToggle.textContent = '☀️';
     }
 
-    // Toggle al hacer clic
     modeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         const isDarkMode = document.body.classList.contains('dark-mode');
         modeToggle.textContent = isDarkMode ? '☀️' : '☾';
         localStorage.setItem('darkMode', isDarkMode);
-    });
-}
-
-// ========== ANIMACIÓN DE SECCIONES ==========
-function initScrollAnimation() {
-    const sections = document.querySelectorAll('section');
-    
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-        observer.observe(section);
     });
 }
 
@@ -68,7 +99,6 @@ function initImageGallery() {
     const modalImage = document.getElementById('modal-image');
     let currentImageIndex = 0;
 
-    // Funciones globales
     window.openImageModal = function(index) {
         if (images[index]) {
             currentImageIndex = index;
@@ -94,7 +124,6 @@ function initImageGallery() {
         img.classList.toggle('zoomed');
     };
 
-    // Navegación con teclado
     document.addEventListener('keydown', function(e) {
         if (modal.style.display === 'flex') {
             if (e.key === 'ArrowLeft') window.changeImage(-1);
@@ -120,9 +149,8 @@ function initModals() {
         }
     };
 
-    // Cerrar modal al hacer clic fuera
     document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('modal-curso') || e.target.classList.contains('modal-taller')) {
+        if (e.target.classList.contains('modal-curso')) {
             e.target.classList.add('oculto');
         }
     });
@@ -136,12 +164,8 @@ function initTestimonials() {
     const btnMostrar = document.getElementById('mostrarFormulario');
     const contenedor = document.getElementById('contenedor-testimonios');
 
-    if (!form || !btnMostrar || !contenedor) {
-        console.warn('Elementos de testimonios no encontrados');
-        return;
-    }
+    if (!form || !btnMostrar || !contenedor) return;
 
-    // Mostrar/ocultar formulario
     btnMostrar.addEventListener('click', function() {
         form.classList.toggle('oculto');
         btnMostrar.textContent = form.classList.contains('oculto') ? 
@@ -149,7 +173,6 @@ function initTestimonials() {
         feedback.textContent = '';
     });
 
-    // Enviar testimonio
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         feedback.textContent = 'Enviando...';
@@ -180,7 +203,6 @@ function initTestimonials() {
         });
     });
 
-    // Función para generar estrellas
     function generarEstrellas(calificacion) {
         let estrellas = '';
         for (let i = 1; i <= 5; i++) {
@@ -189,7 +211,6 @@ function initTestimonials() {
         return estrellas;
     }
 
-    // Cargar testimonios
     window.cargarTestimonios = async function() {
         try {
             const respuesta = await fetch(scriptURL);
@@ -210,7 +231,6 @@ function initTestimonials() {
                         <small>${t.fecha ? new Date(t.fecha).toLocaleDateString() : 'Fecha no disponible'}</small>
                     `;
                     
-                    // Expandir/contraer mensaje
                     tarjeta.addEventListener('click', function() {
                         const corto = this.querySelector('.mensaje-corto');
                         const completo = this.querySelector('.mensaje-completo');
@@ -234,7 +254,6 @@ function initTestimonials() {
         }
     };
     
-    // Cargar testimonios al inicio
     cargarTestimonios();
 }
 
@@ -249,7 +268,6 @@ function initContactForm() {
     formularioContacto.addEventListener('submit', async function(event) {
         event.preventDefault();
         
-        // Ocultar mensajes anteriores
         mensajeEnviadoContacto.classList.add('oculto');
         mensajeErrorContacto.classList.add('oculto');
         
@@ -269,7 +287,6 @@ function initContactForm() {
                 mensajeErrorContacto.classList.add('oculto');
                 formularioContacto.reset();
                 
-                // Ocultar mensaje después de 5 segundos
                 setTimeout(() => {
                     mensajeEnviadoContacto.classList.add('oculto');
                 }, 5000);
@@ -289,8 +306,8 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Inicializando página...');
     
     initLoader();
+    initViewSystem();
     initDarkMode();
-    initScrollAnimation();
     initImageGallery();
     initModals();
     initTestimonials();
