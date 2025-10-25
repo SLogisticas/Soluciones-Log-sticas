@@ -51,8 +51,10 @@ function initViewSystem() {
     // MOSTRAR SIEMPRE INICIO AL RECARGAR - IGNORAR HASH
     showView('inicio');
     
-    // Limpiar hash de la URL
-    history.replaceState(null, null, ' ');
+    // Limpiar hash de la URL - CAMBIO RECOMENDADO:
+    setTimeout(() => {
+        history.replaceState(null, null, ' ');
+    }, 100);
 }
 
 // ========== LOADER ==========
