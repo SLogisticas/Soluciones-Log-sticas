@@ -1,18 +1,19 @@
-/* Estilos CSS Mejorados - PALETA CORPORATIVA MODERNA */
+/* Estilos CSS Mejorados - NUEVA PALETA DE COLORES ELEGANTE */
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
 :root {
-    --primary-color: #2563eb;      /* Azul corporativo vibrante */
-    --secondary-color: #7c3aed;    /* Púrpura moderno */
-    --accent-color: #06b6d4;       /* Cyan brillante */
-    --success-color: #10b981;      /* Verde éxito */
-    --dark-bg: #0f172a;           /* Azul oscuro elegante */
-    --light-bg: #f8fafc;          /* Gris claro profesional */
-    --text-dark: #1e293b;         /* Texto oscuro */
-    --text-light: #64748b;        /* Texto secundario */
+    --primary-color: #6C5B7B;     /* Púrpura azulado elegante - Principal */
+    --secondary-color: #C06C84;   /* Malva/ciruela - Secundario */
+    --accent-color: #F67280;      /* Rosado vibrante - Acento */
+    --light-accent: #F8B195;      /* Melocotón claro - Acento suave */
+    --success-color: #88B04B;     /* Verde armonioso */
+    --dark-bg: #2D3047;           /* Fondo oscuro elegante */
+    --light-bg: #FDF6F0;          /* Fondo claro cálido */
+    --text-dark: #355C7D;         /* Texto azul oscuro */
+    --text-light: #6C587D;        /* Texto secundario */
 }
 
 body {
@@ -92,7 +93,7 @@ body::before {
     font-size: 3rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(135deg, #fff, #e0f2fe);
+    background: linear-gradient(135deg, #fff, var(--light-accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -196,14 +197,14 @@ nav a {
 nav a:hover {
     color: var(--primary-color);
     transform: translateY(-2px);
-    background: rgba(37, 99, 235, 0.05);
+    background: rgba(108, 91, 123, 0.05);
 }
 
 nav a.active {
     color: white;
     background: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 5px 15px rgba(108, 91, 123, 0.3);
 }
 
 /* Secciones mejoradas */
@@ -265,13 +266,13 @@ li {
     align-items: center;
     gap: 15px;
     padding: 15px 20px;
-    background: rgba(37, 99, 235, 0.03);
+    background: rgba(108, 91, 123, 0.03);
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 li:hover {
-    background: rgba(37, 99, 235, 0.08);
+    background: rgba(108, 91, 123, 0.08);
     transform: translateX(10px);
 }
 
@@ -292,7 +293,7 @@ li i {
     text-decoration: none;
     margin-top: 25px;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 8px 25px rgba(108, 91, 123, 0.2);
     position: relative;
     overflow: hidden;
     border: none;
@@ -320,7 +321,7 @@ li i {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 15px 35px rgba(108, 91, 123, 0.4);
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
@@ -349,7 +350,7 @@ li i {
 }
 
 .carousel::-webkit-scrollbar-track {
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(108, 91, 123, 0.1);
     border-radius: 10px;
 }
 
@@ -397,7 +398,7 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 8px 25px rgba(108, 91, 123, 0.15);
     transform: translateY(-2px);
 }
 
@@ -416,14 +417,14 @@ form button {
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 25px rgba(108, 91, 123, 0.3);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 form button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 15px 35px rgba(108, 91, 123, 0.4);
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
@@ -431,8 +432,8 @@ form button:hover {
 footer {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
-    color: #cbd5e1;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-bg) 100%);
+    color: #e2e8f0;
     font-size: 1rem;
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -488,7 +489,7 @@ footer {
 }
 
 .modal .close:hover, .modal .prev:hover, .modal .next:hover {
-    background: rgba(37, 99, 235, 0.8);
+    background: rgba(108, 91, 123, 0.8);
     transform: scale(1.1);
 }
 
@@ -554,7 +555,7 @@ footer {
 
 /* Modo oscuro mejorado */
 .dark-mode {
-    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #355C7D 100%);
     color: #e2e8f0;
 }
 
@@ -563,13 +564,13 @@ footer {
 }
 
 .dark-mode .section-card {
-    background: rgba(30, 41, 59, 0.95);
+    background: rgba(45, 48, 71, 0.95);
     color: #e2e8f0;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode nav {
-    background: rgba(30, 41, 59, 0.95);
+    background: rgba(45, 48, 71, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -578,13 +579,13 @@ footer {
 }
 
 .dark-mode nav a:hover {
-    color: var(--accent-color);
-    background: rgba(6, 182, 212, 0.1);
+    color: var(--light-accent);
+    background: rgba(248, 177, 149, 0.1);
 }
 
 .dark-mode nav a.active {
     color: var(--dark-bg);
-    background: var(--accent-color);
+    background: var(--light-accent);
 }
 
 .dark-mode h2 {
@@ -592,13 +593,13 @@ footer {
 }
 
 .dark-mode input, .dark-mode textarea, .dark-mode select {
-    background: rgba(51, 65, 85, 0.9);
+    background: rgba(53, 92, 125, 0.9);
     color: #e2e8f0;
-    border-color: #475569;
+    border-color: #6C587D;
 }
 
 .dark-mode input:focus, .dark-mode textarea:focus, .dark-mode select:focus {
-    border-color: var(--accent-color);
+    border-color: var(--light-accent);
 }
 
 #mode-toggle {
@@ -614,7 +615,7 @@ footer {
     height: 60px;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 10px 30px rgba(108, 91, 123, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -624,7 +625,7 @@ footer {
 
 #mode-toggle:hover {
     transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.6);
+    box-shadow: 0 15px 40px rgba(108, 91, 123, 0.6);
 }
 
 /* Cursos y Talleres mejorados */
@@ -673,7 +674,7 @@ footer {
 
 .btn-cursos-talleres:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 15px 35px rgba(108, 91, 123, 0.4);
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
@@ -722,7 +723,7 @@ footer {
     position: absolute;
     top: 20px;
     right: 25px;
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(108, 91, 123, 0.1);
     border: none;
     font-size: 2rem;
     cursor: pointer;
@@ -738,8 +739,8 @@ footer {
 }
 
 .cerrar-modal:hover {
-    color: #ff4444;
-    background: rgba(255, 68, 68, 0.1);
+    color: var(--accent-color);
+    background: rgba(246, 114, 128, 0.1);
     transform: rotate(90deg);
 }
 
@@ -749,7 +750,7 @@ footer {
 
 /* Testimonios mejorados - TEXTO ALINEADO CORRECTAMENTE */
 .testimonios-container {
-    background: linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(241, 245, 249, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(253, 246, 240, 0.95) 0%, rgba(255, 255, 255, 0.95) 100%);
     padding: 80px 20px;
     text-align: center;
     backdrop-filter: blur(10px);
@@ -805,7 +806,7 @@ footer {
 .review-form textarea:focus,
 .review-form select:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 8px 25px rgba(108, 91, 123, 0.15);
     transform: translateY(-2px);
 }
 
@@ -818,7 +819,7 @@ footer {
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 25px rgba(108, 91, 123, 0.3);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -826,7 +827,7 @@ footer {
 
 .review-form button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 15px 35px rgba(108, 91, 123, 0.4);
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
@@ -835,7 +836,7 @@ footer {
     margin-top: 15px;
     padding: 12px;
     border-radius: 10px;
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(108, 91, 123, 0.1);
     color: var(--primary-color);
 }
 
@@ -852,14 +853,14 @@ footer {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 10px 30px rgba(108, 91, 123, 0.3);
     display: block;
 }
 
 .btn-calificar:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 15px 40px rgba(108, 91, 123, 0.4);
 }
 
 .vertical-carousel {
@@ -1066,11 +1067,11 @@ footer {
 
 /* Modo oscuro para testimonios */
 .dark-mode .testimonios-container {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(51, 65, 85, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(45, 48, 71, 0.95) 0%, rgba(53, 92, 125, 0.95) 100%);
 }
 
 .dark-mode .testimonio {
-    background: linear-gradient(135deg, rgba(51, 65, 85, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(53, 92, 125, 0.95) 0%, rgba(45, 48, 71, 0.95) 100%);
     color: #e2e8f0;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1080,17 +1081,17 @@ footer {
 }
 
 .dark-mode .modal-curso .contenido-modal {
-    background: linear-gradient(135deg, rgba(51, 65, 85, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(53, 92, 125, 0.95) 0%, rgba(45, 48, 71, 0.95) 100%);
     color: #e2e8f0;
 }
 
 .dark-mode .review-form {
-    background: rgba(51, 65, 85, 0.9);
+    background: rgba(53, 92, 125, 0.9);
 }
 
 .dark-mode .no-testimonios {
-    background: rgba(51, 65, 85, 0.7);
-    border: 2px dashed var(--accent-color);
+    background: rgba(53, 92, 125, 0.7);
+    border: 2px dashed var(--light-accent);
     color: #e2e8f0;
 }
 
@@ -1115,7 +1116,7 @@ footer {
     content: '';
     position: absolute;
     border-radius: 50%;
-    background: rgba(37, 99, 235, 0.05);
+    background: rgba(108, 91, 123, 0.05);
     animation: float 6s ease-in-out infinite;
 }
 
