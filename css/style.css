@@ -1,15 +1,27 @@
-/* Estilos CSS Mejorados - ADAPTADO PARA SISTEMA DE VISTAS */
+/* Estilos CSS Mejorados - VERSIÓN AZUL CORPORATIVO MODERNO */
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #2563eb;      /* Azul corporativo principal */
+    --secondary-color: #1e40af;    /* Azul más oscuro */
+    --accent-color: #3b82f6;       /* Azul acento */
+    --light-blue: #dbeafe;         /* Azul claro para fondos */
+    --text-dark: #1e293b;          /* Texto oscuro */
+    --text-light: #64748b;         /* Texto claro */
+    --white: #ffffff;
+    --dark-bg: #0f172a;            /* Fondo modo oscuro */
+    --dark-card: #1e293b;          /* Cards modo oscuro */
 }
 
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-dark);
     transition: all 0.3s ease;
     position: relative;
 }
@@ -44,7 +56,7 @@ body::before {
 }
 
 .view-header {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(30, 64, 175, 0.9) 100%);
     color: white;
     text-align: center;
     padding: 150px 20px 80px;
@@ -107,7 +119,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -133,14 +145,14 @@ body::before {
     width: 60px;
     height: 60px;
     border: 4px solid #f3f3f3;
-    border-top: 4px solid #667eea;
+    border-top: 4px solid var(--primary-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 0 auto 20px;
 }
 
 #loader p {
-    color: #667eea;
+    color: var(--primary-color);
     font-weight: 700;
     font-size: 1.2rem;
     margin: 0;
@@ -151,7 +163,7 @@ body::before {
     100% { transform: rotate(360deg); }
 }
 
-/* Navegación mejorada - MANTENIENDO TU ESTILO */
+/* Navegación mejorada - COLOR AZUL */
 nav {
     position: fixed;
     top: 0;
@@ -168,7 +180,7 @@ nav {
 }
 
 nav a {
-    color: #333;
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
@@ -186,13 +198,13 @@ nav a::before {
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
 
 nav a:hover {
-    color: #667eea;
+    color: var(--primary-color);
     transform: translateY(-2px);
 }
 
@@ -200,7 +212,18 @@ nav a:hover::before {
     width: 80%;
 }
 
-/* Secciones mejoradas - AHORA DENTRO DE LAS VISTAS */
+nav a.active {
+    color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+}
+
+nav a.active::before {
+    width: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Secciones mejoradas - SIN RAYITAS EN LISTAS */
 .section-card {
     background: rgba(255, 255, 255, 0.95);
     padding: 50px;
@@ -211,8 +234,6 @@ nav a:hover::before {
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .section-card::before {
@@ -222,16 +243,16 @@ nav a:hover::before {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
 }
 
 h2 {
     margin-top: 0;
-    color: #333;
+    color: var(--text-dark);
     font-size: 2.2rem;
     font-weight: 700;
     padding-left: 20px;
-    border-left: 5px solid #667eea;
+    border-left: 5px solid var(--primary-color);
     margin-bottom: 30px;
     position: relative;
 }
@@ -243,7 +264,7 @@ h2::after {
     left: 20px;
     width: 50px;
     height: 3px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
 }
 
@@ -258,26 +279,25 @@ li {
     align-items: center;
     gap: 15px;
     padding: 15px 20px;
-    background: rgba(102, 126, 234, 0.05);
+    background: rgba(37, 99, 235, 0.05);
     border-radius: 12px;
     transition: all 0.3s ease;
-    border-left: 4px solid transparent;
+    /* REMOVIMOS EL BORDE IZQUIERDO QUE CAUSABA LAS RAYITAS */
 }
 
 li:hover {
-    background: rgba(102, 126, 234, 0.1);
-    border-left-color: #667eea;
+    background: rgba(37, 99, 235, 0.1);
     transform: translateX(10px);
 }
 
 li i {
-    color: #667eea;
+    color: var(--primary-color);
     font-size: 1.3rem;
     width: 30px;
     text-align: center;
 }
 
-/* Botones mejorados */
+/* Botones mejorados - COLOR AZUL */
 .btn {
     display: inline-block;
     padding: 15px 30px;
@@ -295,6 +315,7 @@ li i {
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 .btn::before {
@@ -314,7 +335,8 @@ li i {
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
 .btn-whatsapp {
@@ -334,7 +356,7 @@ li i {
     padding: 20px 10px;
     margin: 30px 0;
     scrollbar-width: thin;
-    scrollbar-color: #667eea transparent;
+    scrollbar-color: var(--primary-color) transparent;
 }
 
 .carousel::-webkit-scrollbar {
@@ -342,12 +364,12 @@ li i {
 }
 
 .carousel::-webkit-scrollbar-track {
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(37, 99, 235, 0.1);
     border-radius: 10px;
 }
 
 .carousel::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 10px;
 }
 
@@ -365,7 +387,7 @@ li i {
 .carousel img:hover {
     transform: scale(1.08) rotate(1deg);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    border-color: #667eea;
+    border-color: var(--primary-color);
 }
 
 /* Formularios mejorados */
@@ -388,8 +410,8 @@ input, textarea, select {
 
 input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
     transform: translateY(-2px);
 }
 
@@ -399,7 +421,7 @@ textarea {
 }
 
 form button {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 18px 35px;
     border: none;
@@ -408,23 +430,23 @@ form button {
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 form button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, #764ba2, #667eea);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
 /* Footer mejorado */
 footer {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, rgba(51, 51, 51, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
-    color: #ccc;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
+    color: #cbd5e1;
     font-size: 1rem;
     backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -480,7 +502,7 @@ footer {
 }
 
 .modal .close:hover, .modal .prev:hover, .modal .next:hover {
-    background: rgba(102, 126, 234, 0.8);
+    background: rgba(37, 99, 235, 0.8);
     transform: scale(1.1);
 }
 
@@ -530,7 +552,7 @@ footer {
 }
 
 .video-gallery h3 {
-    color: #333;
+    color: var(--text-dark);
     font-size: 1.4rem;
     margin-bottom: 20px;
     font-weight: 600;
@@ -546,7 +568,7 @@ footer {
 
 /* Modo oscuro mejorado */
 .dark-mode {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1e293b 100%);
     color: #e0e0e0;
 }
 
@@ -555,13 +577,13 @@ footer {
 }
 
 .dark-mode .section-card {
-    background: rgba(30, 30, 46, 0.95);
+    background: rgba(30, 41, 59, 0.95);
     color: #e0e0e0;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode nav {
-    background: rgba(30, 30, 46, 0.95);
+    background: rgba(30, 41, 59, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -574,13 +596,13 @@ footer {
 }
 
 .dark-mode input, .dark-mode textarea, .dark-mode select {
-    background: rgba(40, 40, 60, 0.9);
+    background: rgba(30, 41, 59, 0.9);
     color: #e0e0e0;
-    border-color: #444;
+    border-color: #475569;
 }
 
 .dark-mode input:focus, .dark-mode textarea:focus, .dark-mode select:focus {
-    border-color: #667eea;
+    border-color: var(--primary-color);
 }
 
 #mode-toggle {
@@ -588,7 +610,7 @@ footer {
     bottom: 25px;
     right: 25px;
     z-index: 3000;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     border: none;
     border-radius: 50%;
@@ -596,7 +618,7 @@ footer {
     height: 60px;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -606,7 +628,7 @@ footer {
 
 #mode-toggle:hover {
     transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.6);
 }
 
 /* Cursos y Talleres mejorados */
@@ -628,7 +650,7 @@ footer {
     margin: 10px;
     transition: all 0.3s ease;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border: none;
     cursor: pointer;
     font-size: 1rem;
@@ -655,8 +677,8 @@ footer {
 
 .btn-cursos-talleres:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-    background: linear-gradient(135deg, #764ba2, #667eea);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
 /* MODALES MEJORADOS */
@@ -704,11 +726,11 @@ footer {
     position: absolute;
     top: 20px;
     right: 25px;
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(37, 99, 235, 0.1);
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    color: #667eea;
+    color: var(--primary-color);
     transition: all 0.3s ease;
     width: 45px;
     height: 45px;
@@ -729,9 +751,9 @@ footer {
     display: none !important;
 }
 
-/* Testimonios mejorados */
+/* Testimonios mejorados - SIN RAYITAS */
 .testimonios-container {
-    background: linear-gradient(135deg, rgba(248, 243, 255, 0.95) 0%, rgba(245, 240, 255, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(219, 234, 254, 0.95) 0%, rgba(219, 234, 254, 0.95) 100%);
     padding: 80px 20px;
     text-align: center;
     backdrop-filter: blur(10px);
@@ -740,7 +762,7 @@ footer {
 
 .testimonios-header h2 {
     font-size: 2.8rem;
-    background: linear-gradient(135deg, #5e2ca5, #7c40bf);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -749,7 +771,7 @@ footer {
 
 .testimonios-header p {
     font-size: 1.2rem;
-    color: #7a5ab3;
+    color: var(--primary-color);
     margin-bottom: 50px;
     max-width: 600px;
     margin-left: auto;
@@ -783,13 +805,13 @@ footer {
 .review-form input:focus,
 .review-form textarea:focus,
 .review-form select:focus {
-    border-color: #5e2ca5;
-    box-shadow: 0 8px 25px rgba(94, 44, 165, 0.15);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
     transform: translateY(-2px);
 }
 
 .review-form button {
-    background: linear-gradient(135deg, #5e2ca5, #7c40bf);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 16px;
     border: none;
@@ -797,7 +819,7 @@ footer {
     font-size: 1.1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(94, 44, 165, 0.3);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -805,8 +827,8 @@ footer {
 
 .review-form button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(94, 44, 165, 0.4);
-    background: linear-gradient(135deg, #7c40bf, #5e2ca5);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.4);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
 }
 
 .form-feedback {
@@ -814,13 +836,13 @@ footer {
     margin-top: 15px;
     padding: 12px;
     border-radius: 10px;
-    background: rgba(94, 44, 165, 0.1);
-    color: #5e2ca5;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary-color);
 }
 
 .btn-calificar {
     margin: 20px 0;
-    background: linear-gradient(135deg, #5e2ca5, #7c40bf);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
     padding: 20px 40px;
     border: none;
@@ -831,13 +853,13 @@ footer {
     font-size: 1.1rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 10px 30px rgba(94, 44, 165, 0.3);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
 }
 
 .btn-calificar:hover {
-    background: linear-gradient(135deg, #7c40bf, #5e2ca5);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(94, 44, 165, 0.4);
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
 }
 
 .vertical-carousel {
@@ -937,22 +959,22 @@ footer {
 
 /* Modo oscuro para testimonios */
 .dark-mode .testimonios-container {
-    background: linear-gradient(135deg, rgba(42, 42, 42, 0.95) 0%, rgba(58, 58, 58, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
 }
 
 .dark-mode .testimonio {
-    background: linear-gradient(135deg, rgba(58, 58, 58, 0.95) 0%, rgba(42, 42, 42, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
     color: #e0e0e0;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .dark-mode .modal-curso .contenido-modal {
-    background: linear-gradient(135deg, rgba(58, 58, 58, 0.95) 0%, rgba(42, 42, 42, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.95) 100%);
     color: #e0e0e0;
 }
 
 .dark-mode .review-form {
-    background: rgba(58, 58, 58, 0.9);
+    background: rgba(30, 41, 59, 0.9);
 }
 
 /* Efectos de partículas para el fondo (opcional) */
@@ -976,7 +998,7 @@ footer {
     content: '';
     position: absolute;
     border-radius: 50%;
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(37, 99, 235, 0.1);
     animation: float 6s ease-in-out infinite;
 }
 
