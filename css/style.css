@@ -1,4 +1,4 @@
-/* Estilos CSS Mejorados - ADAPTADO PARA SISTEMA DE VISTAS CON NUEVA PALETA */
+/* Estilos CSS Mejorados - CORREGIDOS PROBLEMAS MENCIONADOS */
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -158,7 +158,7 @@ body::before {
     100% { transform: rotate(360deg); }
 }
 
-/* Navegación mejorada - MANTENIENDO TU ESTILO */
+/* Navegación mejorada - CORREGIDA PARA MÓVIL */
 nav {
     position: fixed;
     top: 0;
@@ -750,7 +750,7 @@ footer {
     display: none !important;
 }
 
-/* Testimonios mejorados - SIN RAYITAS */
+/* Testimonios mejorados - SIN RAYITAS - CORREGIDO */
 .testimonios-container {
     background: linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(241, 245, 249, 0.95) 100%);
     padding: 80px 20px;
@@ -766,6 +766,12 @@ footer {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 15px;
+    border-left: none; /* Eliminado borde lateral */
+    padding-left: 0; /* Eliminado padding lateral */
+}
+
+.testimonios-header h2::after {
+    display: none; /* Eliminada línea decorativa */
 }
 
 .testimonios-header p {
@@ -872,7 +878,7 @@ footer {
     margin: 30px 0;
 }
 
-/* TESTIMONIOS INDIVIDUALES - SIN RAYITAS */
+/* TESTIMONIOS INDIVIDUALES - SIN RAYITAS - CORREGIDO */
 .testimonio {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     padding: 25px;
@@ -906,26 +912,36 @@ footer {
     padding: 20px;
 }
 
-/* Responsive mejorado */
+/* Responsive mejorado - CORREGIDO PARA MÓVIL */
 @media(max-width: 768px) {
+    .view-header {
+        padding: 120px 20px 60px;
+    }
+    
     .view-header h1 {
         font-size: 2.2rem;
+        line-height: 1.2;
     }
     
     .view-header p {
         font-size: 1.1rem;
+        line-height: 1.4;
     }
     
+    /* Navegación móvil mejorada */
     nav {
         flex-direction: column;
-        gap: 10px;
-        padding: 15px;
+        gap: 0;
+        padding: 10px 15px;
+        align-items: center;
     }
     
     nav a {
         width: 100%;
         text-align: center;
         padding: 12px;
+        margin: 5px 0;
+        font-size: 1rem;
     }
     
     .video-gallery iframe {
@@ -946,15 +962,57 @@ footer {
     
     h2 {
         font-size: 1.8rem;
+        padding-left: 15px;
     }
     
     .contenido-modal {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
         margin: 20px;
     }
     
     .testimonios-header h2 {
         font-size: 2.2rem;
+        padding-left: 0;
+    }
+    
+    .testimonio {
+        padding: 20px;
+    }
+    
+    .view-content {
+        padding: 20px 15px;
+    }
+    
+    .btn, .btn-cursos-talleres {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+@media(max-width: 480px) {
+    .view-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .view-header p {
+        font-size: 1rem;
+    }
+    
+    nav a {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    .section-card {
+        padding: 20px 15px;
+    }
+    
+    .testimonios-header h2 {
+        font-size: 1.8rem;
     }
 }
 
