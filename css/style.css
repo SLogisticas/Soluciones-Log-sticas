@@ -494,19 +494,19 @@ footer {
 }
 
 .modal .close {
-    top: 15px;
+    top: 10px;
     right: 20px;
     font-size: 45px;
 }
 
 .modal .prev {
-    left: 15px;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
 }
 
 .modal .next {
-    right: 15px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -721,7 +721,7 @@ footer {
 
 .cerrar-modal {
     position: absolute;
-    top: 8px;
+    top: 5px;
     right: 25px;
     background: rgba(108, 91, 123, 0.1);
     border: none;
